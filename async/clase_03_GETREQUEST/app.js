@@ -47,3 +47,21 @@ async function fecthPosts() {
 }
 
 fetchButton.addEventListener("click", fecthPosts);
+
+async function createPost(title, content) {
+	const userId = Math.random();
+	const post = {
+		title: title,
+		body: content,
+		userId: userId,
+	};
+	sendHTTPRequest("POST", "https://jsonplaceholder.typicode.com/posts", post);
+}
+
+form.addEventListener("submit", (event) => {
+	event.preventDefault();
+	const title = event.currentTarget.querySelector("#title").value;
+	const content = event.currentTarget.querySelector("#content").value;
+
+	createPost(title, content);
+});
