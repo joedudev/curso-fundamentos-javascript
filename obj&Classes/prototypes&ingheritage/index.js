@@ -26,3 +26,15 @@ const perro1 = new Perro("Bobby", "Perro", "Pug");
 console.log(perro1);
 perro1.correr();
 perro1.emitirSonido();
+
+perro1.nuevoMetodo = function () {
+	console.log("Este es un nuevo metodo");
+};
+
+console.log(perro1);
+perro1.nuevoMetodo();
+Perro.prototype.segundoMetodo = function () {
+	console.log("Es otro nuevo metodo");
+};
+console.log(perro1);
+perro1.segundoMetodo();
